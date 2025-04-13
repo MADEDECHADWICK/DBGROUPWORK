@@ -1,39 +1,29 @@
-# BookStore Database Management System
+# 📚 Bookstore Database Project
+
+This project is a relational database system for managing a bookstore's operations. It was developed as part of a group assignment focused on **MySQL database design, implementation, and security**.
 
 ## Overview
-This project implements a comprehensive MySQL database solution for bookstore management. The system efficiently organizes and manages critical bookstore operations including inventory, customer data, and order processing. Designed with scalability in mind, it maintains complex relationships between entities while enforcing strict data integrity and security through role-based access control.
 
-## Database Schema
-The relational database comprises 15 interconnected tables structured into three main components:
+The system supports key operations such as:
 
-### Core Inventory Tables
-| Table | Description |
-|-------|-------------|
-| `book` | Stores book metadata including title, price, and publication date |
-| `author` | Maintains author information |
-| `book_author` | Junction table resolving many-to-many book-author relationships |
-| `publisher` | Contains publisher details |
-| `book_language` | Tracks available language options |
+- Managing books, authors, and publishers
+- Tracking customers and their addresses
+- Handling orders, order history, and shipping details
+- Enforcing secure access control using user roles
 
-### Customer Management
-| Table | Description |
-|-------|-------------|
-| `customer` | Central customer repository with contact details |
-| `address` | Physical address storage |
-| `customer_address` | Links customers to addresses with status tracking |
-| `country` | Reference table for supported countries |
-| `address_status` | Defines address states (current/old) |
+## Technologies Used
 
-### Order Processing System
-| Table | Description |
-|-------|-------------|
-| `cust_order` | Master order records |
-| `order_line` | Line items for each order |
-| `shipping_method` | Available delivery options |
-| `order_status` | Order lifecycle states |
-| `order_history` | Complete order status audit trail |
+- **MySQL** – database management system
+- **Draw.io** – for ER diagram design
+- **SQL** – for data definition and manipulation
 
-## Installation & Setup
-1. **Database Initialization**:
-   ```bash
-   mysql -u root -p < BookStore.sql
+## Database Schema (ER Diagram)
+Below is the ER diagram representing the database schema and relationships:
+![ER diagram](https://github.com/user-attachments/assets/bbe741af-1482-4427-af0b-bcc2cc18bf2f)
+
+
+
+## Contributors
+George Arogo
+https://github.com/Aro-geo
+    
