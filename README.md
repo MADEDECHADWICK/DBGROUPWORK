@@ -26,4 +26,6 @@ Below is the ER diagram representing the database schema and relationships:
 ## Contributors
 George Arogo
 https://github.com/Aro-geo
+Barbra Nyakundi
+Chadwick Madede
     
