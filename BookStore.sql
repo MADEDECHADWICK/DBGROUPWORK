@@ -13,7 +13,8 @@ name VARCHAR(100) NOT NULL
 CREATE TABLE book (
 book_id INT AUTO_INCREMENT PRIMARY KEY,
 title VARCHAR(250) NOT NULL,
-price DECIMAL(10, 2) UNIQUE,
+isbn VARCHAR(20) UNIQUE,
+price DECIMAL(10, 2),
 publication_date DATE,
 language_id INT,
 publisher_id INT,
@@ -112,12 +113,13 @@ INSERT INTO country (name) VALUES ('Kenya'), ('Nigeria'), ('Uganda');
 INSERT INTO book_language (name) VALUES ('English'), ('Swahili'), ('French');
 INSERT INTO publisher (name) VALUES ('Pearson'), ('Longhorn'), ("KLB");
 INSERT INTO author (name) VALUES ('Ngugi wa Thiong'), ('Chinua Achebe'), ('Margaret Ogola');
-INSERT INTO book (title, publication_date, price, language_id, publisher_id)
-VALUES ('The River Between', '2004-03-01', 15.99, 1, 2),
-       ('Things Fall Apart','1994-06-01', 17.50, 1, 1),
-       (' The River and the Source','2020-05-28', 16.99, 1, 3);
-INSERT INTO book_author (book_id, author_id) VALUES (1, 1), (2, 2), (3, 3);
 
+INSERT INTO book (title, isbn, publication_date, price, language_id, publisher_id)
+VALUES ('The River Between', '9789966463600', '2004-03-01', 15.99, 1, 2),
+	      ('Things Fall Apart', '9780385474542', '1994-06-01', 17.50, 1, 1),
+       ('The River and the Source', '97803854457600', '2021-05-28', 17.50, 1, 3);
+
+INSERT INTO book_author (book_id, author_id) VALUES (1, 1), (2, 2), (3, 3);
 -- insert customers and address
 INSERT INTO customer (name, email, phone) 
 VALUES  ('Jane Kuchal', 'janekuchal@gmail.com', '+254712345678'),
@@ -140,7 +142,7 @@ VALUES (1, NOW() , 1, 1);
 INSERT INTO order_line (order_id, book_id, quantity, price)
 VALUES (1, 1, 2, 15.99), (1, 2, 1, 17.50);
 INSERT INTO order_history (order_id, status_id, change_date)
-VALUES (1, 1, 12/04/2025);
+VALUES (1, 1, NOW())
 
 -- Create roles
 CREATE ROLE bookstore_admin;
